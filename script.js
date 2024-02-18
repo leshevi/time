@@ -11,7 +11,7 @@ function clock(){
     day: date.toLocaleDateString('en-us', {weekday:'long'}),
     date: date.getDate(),
     month: date.toLocaleDateString('en-us', {month:'long'}),
-    year: date.getFullYear(),
+    year: date.getFullYear()
   }
   const valFormat = (val) => {
     if(typeof val == 'number') return `<span class="value number">${val}</span>`
