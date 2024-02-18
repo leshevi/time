@@ -11,7 +11,7 @@ function clock(){
     day: date.toLocaleDateString('en-us', {weekday:'long'}),
     date: date.getDate(),
     month: date.toLocaleDateString('en-us', {month:'long'}),
-    year: date.getFullYear()
+    year: date.getFullYear(),
   }
   const valFormat = (val) => {
     if(typeof val == 'number') return `<span class="value number">${val}</span>`
@@ -19,7 +19,7 @@ function clock(){
   }
   document.querySelector(".watch").innerHTML = 
     `<span class="keyword">const</span> <span class="def">clock</span> <span class="operator">=</span> {<br>` 
-    + Object.entries(clockObj).reduce((str, [key, val])=> str + `${'&nbsp'.repeat(indent)}<span class="property">${key}</span>: ${valFormat(val)},<br>`, '') 
+    + Object.entries(clockObj).reduce((str, [key, val])=> str + `${'&nbsp'.repeat(indent)}<span class="property">${key}</span>: ${valFormat(val)} <br>`, '') 
     + '};';
   requestAnimationFrame(clock)
 }
