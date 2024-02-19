@@ -19,7 +19,7 @@ function clock(){
   }
   document.querySelector(".watch").innerHTML = 
     `<span class="keyword">const</span> <span class="def">clock</span> <span class="operator">=</span> {<br>` 
-    + Object.entries(clockObj).reduce((str, [key, val])=> str + `${'&nbsp'.repeat(indent)}<span class="property">${key}</span>: ${valFormat(val)} <br>`, '') 
+    + Object.entries(clockObj).reduce((str, [key, val])=> str + `${'&nbsp'.repeat(indent)}<span class="property">${key}</span>: ${valFormat(val)},<br>`, '') 
     + '};';
   requestAnimationFrame(clock)
 }
